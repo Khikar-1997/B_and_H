@@ -1,6 +1,6 @@
 package com.example.demo.rest.model.product;
 
-import com.example.demo.persistance.model.Categories;
+import com.example.demo.rest.model.category.CategoryResponseModel;
 
 import java.util.Objects;
 
@@ -8,9 +8,9 @@ public class ProductResponseModel {
     private Long id;
     private String name;
     private int price;
-    private Categories category;
+    private CategoryResponseModel category;
 
-    public ProductResponseModel(Long id, String name, int price, Categories category) {
+    public ProductResponseModel(Long id, String name, int price, CategoryResponseModel category) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -44,11 +44,11 @@ public class ProductResponseModel {
         this.price = price;
     }
 
-    public Categories getCategory() {
+    public CategoryResponseModel getCategory() {
         return category;
     }
 
-    public void setCategory(Categories category) {
+    public void setCategory(CategoryResponseModel category) {
         this.category = category;
     }
 

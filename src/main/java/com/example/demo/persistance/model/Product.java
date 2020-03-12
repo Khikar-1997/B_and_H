@@ -1,6 +1,5 @@
 package com.example.demo.persistance.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import java.util.Objects;
@@ -10,13 +9,12 @@ public class Product extends AbstractBaseEntity {
     private String name;
     private int price;
     @ManyToOne
-    @Column(name = "category_id")
-    private Categories categories;
+    private Category category;
 
-    public Product(String name, int price, Categories categories) {
+    public Product(String name, int price, Category category) {
         this.name = name;
         this.price = price;
-        this.categories = categories;
+        this.category = category;
     }
 
     public Product() {
@@ -38,12 +36,12 @@ public class Product extends AbstractBaseEntity {
         this.price = price;
     }
 
-    public Categories getCategories() {
-        return categories;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategories(Categories categories) {
-        this.categories = categories;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override
@@ -54,12 +52,12 @@ public class Product extends AbstractBaseEntity {
         Product product = (Product) o;
         return price == product.price &&
                 Objects.equals(name, product.name) &&
-                Objects.equals(categories, product.categories);
+                Objects.equals(category, product.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), name, price, categories);
+        return Objects.hash(super.hashCode(), name, price, category);
     }
 
     @Override
@@ -67,7 +65,7 @@ public class Product extends AbstractBaseEntity {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
-                ", categories=" + categories +
+                ", categories=" + category +
                 '}';
     }
 }

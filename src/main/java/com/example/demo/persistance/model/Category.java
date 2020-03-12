@@ -1,24 +1,27 @@
 package com.example.demo.persistance.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.util.Objects;
 
 @Entity
-public class Categories extends AbstractBaseEntity {
-    private CategoriesType type;
+public class Category extends AbstractBaseEntity {
+    @Enumerated(EnumType.STRING)
+    private CategoryType type;
 
-    public Categories(CategoriesType type) {
+    public Category(CategoryType type) {
         this.type = type;
     }
 
-    public Categories() {
+    public Category() {
     }
 
-    public CategoriesType getType() {
+    public CategoryType getType() {
         return type;
     }
 
-    public void setType(CategoriesType type) {
+    public void setType(CategoryType type) {
         this.type = type;
     }
 
@@ -27,7 +30,7 @@ public class Categories extends AbstractBaseEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Categories that = (Categories) o;
+        Category that = (Category) o;
         return type == that.type;
     }
 

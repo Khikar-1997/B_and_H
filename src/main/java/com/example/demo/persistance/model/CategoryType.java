@@ -1,6 +1,6 @@
 package com.example.demo.persistance.model;
 
-public enum CategoriesType {
+public enum CategoryType {
     PHOTOGRAPHY,
     COMPUTER,
     HOME_ENTERTAINMENT,

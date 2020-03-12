@@ -1,24 +1,24 @@
 package com.example.demo.rest.model.category;
 
-import com.example.demo.persistance.model.CategoriesType;
+import com.example.demo.persistance.model.CategoryType;
 
 import java.util.Objects;
 
-public class CategoriesRequestModel {
-    private CategoriesType type;
+public class CategoryRequestModel {
+    private CategoryType type;
 
-    public CategoriesRequestModel(CategoriesType type) {
+    public CategoryRequestModel(CategoryType type) {
         this.type = type;
     }
 
-    public CategoriesRequestModel() {
+    public CategoryRequestModel() {
     }
 
-    public CategoriesType getType() {
+    public CategoryType getType() {
         return type;
     }
 
-    public void setType(CategoriesType type) {
+    public void setType(CategoryType type) {
         this.type = type;
     }
 
@@ -26,7 +26,7 @@ public class CategoriesRequestModel {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CategoriesRequestModel that = (CategoriesRequestModel) o;
+        CategoryRequestModel that = (CategoryRequestModel) o;
         return type == that.type;
     }
 
